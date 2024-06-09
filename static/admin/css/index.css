@@ -1,0 +1,145 @@
+/*CSS FOR INDEX.HTML*/
+.circle-container img {
+    width: 100%; /* Make the image fill the container */
+    height: 100%; /* Make the image fill the container */
+    object-fit: cover;
+    align-items: center;
+}
+
+.circle-container {
+    width: 347px; /* Set the desired width */
+    height: 250px; /* Set the desired height */
+    overflow: hidden; /* Hide the overflowing parts of the image */
+    border-radius: 20px; /* Clip the image to the circle */
+    margin: 20px;
+}
+.btn1 button{
+   
+        color:rgb(255, 135, 113);
+        margin-top: 10px;
+        margin-bottom: 40px;
+        background-color: beige;
+        padding: 10px 10px;
+        
+}
+
+.btn1 p {
+    margin: 0;
+    padding: 0;;
+}
+
+/*body{
+    background-image: url('../img/GGG.jpg');
+    
+}*/
+.btn1 button:hover {
+    background-color: rgb(37, 223, 121);
+
+}
+@media (min-width: 1025px) {
+    .row-cols1-md-3>* {
+        flex: 0 0 auto;
+        width: 33.33333333%;
+    }
+}
+/*CSS FOR SERVICES.HTML*/
+.container{
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+.circle-row img {
+    width: 100%; /* Make the image fill the container */
+    height: 100%; /* Make the image fill the container */
+    object-fit: cover;
+    align-items: center;
+}
+.circle-row{
+    display: flex;
+    width: 330px; /* Set the desired width */
+    height: 400px; /* Set the desired height */
+    overflow: hidden; /* Hide the overflowing parts of the image */
+    border-radius: 20px;
+    display: inline-block;
+    margin: 10px;
+
+}
+.col1{
+        display: inline-block;
+        width: auto; /* Adjust width to make room for margins */
+        vertical-align: top;
+        margin: 50px;
+        margin-top: 10px;
+
+}
+.navbar{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.container20{
+    display: flex;
+    justify-content: center;
+}
+.container21{
+    
+    font-size: 10;
+}
+.font{
+    font-size: medium;
+    font-family:cursive;
+}
+/*css for about*/
+.carousel-inner{
+    background-color: rgb(158, 196, 83);
+}
+/*hide ratio button*/
+
+/*.rating > input{
+    display: none;
+    
+}
+
+.rating{
+    display: inline-block;
+    border:0;
+}
+
+.rating > label{
+    float: right;
+}
+
+/*start showing stars*/
+/*.rating > label:before{
+    display: inline-block;
+    font-size: 1.5rem;
+    font-family: FontAwesome;
+    content: "\f005";
+    margin: 0px;
+    padding: 0.3rem .2rem;
+    cursor: pointer;
+}
+/*CSS FOR HALF STAR*/
+
+/*.rating .half:before{
+    content: "\f089";
+    position: absolute;
+    padding-right: 0;
+
+}
+
+/*CLICK AND HOVER*/
+/*input[type="radio"]:checked ~label,input:hover~label{
+    color: #ffb503;
+}
+
+/*hover highlight*/
+/*input:checked+label:hover, input:checked~label:hover~label,
+label:hover~input:checked~label{
+    color: #cc9000;
+}*/
+
+
+
+

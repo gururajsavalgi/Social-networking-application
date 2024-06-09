@@ -1,0 +1,43 @@
+
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/login.css">
+    <title>login</title>
+</head>
+    
+<main class="form-signin w-100 m-auto">
+  <form method="POST" action="">
+    {% csrf_token %}
+    <h1 class="normal">Please Login</h1>
+
+    <div class="form-floating">
+      <input type="email" class="form-control" id="floatingInput" name="email" placeholder="email">
+      <label for="floatingInput">email</label>
+    </div>
+    <div class="form-floating">
+      <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password">
+      <label for="floatingPassword">Password</label>
+    </div>
+
+    <div class="form-floating text-start my-3">
+      <input class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault">
+      <label class="form-check-label" for="flexCheckDefault">
+        Remember me
+      </label>
+    </div>
+    <div class="form-floating my-3">
+      <a href="/sign_in"><label>create account</label></a>
+    </div>
+    <div class="form-floating my-3">
+    <button type="submit">Login</button>
+  </div>
+    <p class="form-floating">&copy; 2017–2024</p>
+  
+  </form>
+</main>
+
+    </body>
+</html>
