@@ -1,0 +1,16 @@
+# Ignore Python bytecode files
+*.pyc
+
+# Ignore Django's migration files
+*/migrations/
+
+# Ignore the virtual environment directory
+venv/
+
+# Ignore IDE and editor files
+.idea/
+.vscode/
+
+# Ignore local development settings
+*.env
+
