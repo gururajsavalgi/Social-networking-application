@@ -161,3 +161,4 @@ AUTHENTICATION_BACKENDS = [
     'SocialApp.backend.EmailBackend',
     'django.contrib.auth.backends.ModelBackend',  # Keep the default backend as well
 ]
+
