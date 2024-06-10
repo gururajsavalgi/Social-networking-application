@@ -116,15 +116,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://127.0.0.1:8000/api/users/?search={{searchQuery}}",
+					"raw": "http://{{server}}/api/users/?search={{searchQuery}}",
 					"protocol": "http",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"{{server}}"
 					],
-					"port": "8000",
 					"path": [
 						"api",
 						"users",
@@ -170,15 +166,11 @@
 					}
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8000/api/send-friend-request/{{friendRequestId}}/",
+					"raw": "http://{{server}}/api/send-friend-request/{{friendRequestId}}/",
 					"protocol": "http",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"{{server}}"
 					],
-					"port": "8000",
 					"path": [
 						"api",
 						"send-friend-request",
@@ -219,15 +211,11 @@
 					}
 				],
 				"url": {
-					"raw": "http://127.0.0.1:8000/api/friend-requests/",
+					"raw": "http://{{server}}/api/friend-requests/",
 					"protocol": "http",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"{{server}}"
 					],
-					"port": "8000",
 					"path": [
 						"api",
 						"friend-requests",
@@ -258,15 +246,11 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "http://127.0.0.1:8000/api/accept-friend-request/{{acceptFrinedRequestById}}/",
+					"raw": "http://{{server}}/api/accept-friend-request/{{acceptFrinedRequestById}}/",
 					"protocol": "http",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"{{server}}"
 					],
-					"port": "8000",
 					"path": [
 						"api",
 						"accept-friend-request",
@@ -298,15 +282,11 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "http://127.0.0.1:8000/api/decline-friend-request/{{rejectFriendRequestById}}/",
+					"raw": "http://{{server}}/api/decline-friend-request/{{rejectFriendRequestById}}/",
 					"protocol": "http",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"{{server}}"
 					],
-					"port": "8000",
 					"path": [
 						"api",
 						"decline-friend-request",
@@ -338,15 +318,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://127.0.0.1:8000/friends/",
+					"raw": "http://{{server}}/friends/",
 					"protocol": "http",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"{{server}}"
 					],
-					"port": "8000",
 					"path": [
 						"friends",
 						""
@@ -396,7 +372,7 @@
 		},
 		{
 			"key": "rejectFriendRequestById",
-			"value": "2",
+			"value": "5",
 			"type": "string"
 		},
 		{
@@ -411,7 +387,7 @@
 		},
 		{
 			"key": "acceptFrinedRequestById",
-			"value": "2",
+			"value": "4",
 			"type": "string"
 		}
 	]
