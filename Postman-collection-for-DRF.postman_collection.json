@@ -1,0 +1,418 @@
+{
+	"info": {
+		"_postman_id": "f7624fb0-d5c4-4a44-a819-44b5d835f346",
+		"name": "Postman collection for DRF",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36187153",
+		"_collection_link": "https://guru22-5021.postman.co/workspace/c701cc53-a25f-4c00-b6be-9d0a3ceec2de/collection/36187153-f7624fb0-d5c4-4a44-a819-44b5d835f346?action=share&source=collection_link&creator=36187153"
+	},
+	"item": [
+		{
+			"name": "User Registeration",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "Guru@gmail.com",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"raghf\",\r\n    \"email\":\"raghu@gmail.com\",\r\n    \"password\":\"1234\",\r\n    \"password2\":\"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{server}}/api/register/",
+					"protocol": "http",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"api",
+						"register",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "Guru@gmail.com",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"guru@gmail.com\",\r\n    \"password\":\"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{server}}/api/login/",
+					"protocol": "http",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"api",
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search user by email and username",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{samplePassword}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{sampeUserName}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/users/?search={{searchQuery}}",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"users",
+						""
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "{{searchQuery}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send Friend Request",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{samplePassword}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{sampeUserName}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/send-friend-request/{{friendRequestId}}/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"send-friend-request",
+						"{{friendRequestId}}",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Friend Request",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{samplePassword}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{sampeUserName}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Vary",
+						"value": "Accept"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/friend-requests/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"friend-requests",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Accept Friend Request",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{samplePassword}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{sampeUserName}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/accept-friend-request/{{acceptFrinedRequestById}}/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"accept-friend-request",
+						"{{acceptFrinedRequestById}}",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reject Friend Request",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{samplePassword}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{sampeUserName}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/decline-friend-request/{{rejectFriendRequestById}}/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"decline-friend-request",
+						"{{rejectFriendRequestById}}",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Friends",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{samplePassword}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{sampeUserName}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/friends/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"friends",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "server",
+			"value": "127.0.0.1:8000",
+			"type": "string"
+		},
+		{
+			"key": "searchQuery",
+			"value": "gmail",
+			"type": "string"
+		},
+		{
+			"key": "friendRequestId",
+			"value": "2",
+			"type": "string"
+		},
+		{
+			"key": "rejectFriendRequestById",
+			"value": "2",
+			"type": "string"
+		},
+		{
+			"key": "sampeUserName",
+			"value": "guru@gmail.com",
+			"type": "string"
+		},
+		{
+			"key": "samplePassword",
+			"value": "1234",
+			"type": "string"
+		},
+		{
+			"key": "acceptFrinedRequestById",
+			"value": "2",
+			"type": "string"
+		}
+	]
+}

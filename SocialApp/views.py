@@ -141,7 +141,7 @@ class DeclineFriendRequestView(APIView):
        friend_request = get_object_or_404(FriendRequest, id=request_id)
        if friend_request.to_user == request.user:
         friend_request.delete()
-       return Response({"detail": "Deleted"},status=status.HTTP_204_NO_CONTENT)
+       return Response({"detail": "Friend request Deleted"},status=status.HTTP_204_NO_CONTENT)
 
 class AcceptFriendRequestView(APIView):
     permission_classes = [IsAuthenticated]
@@ -151,7 +151,7 @@ class AcceptFriendRequestView(APIView):
         if friend_request.to_user == request.user:
           Friendship.objects.get_or_create(user1=friend_request.from_user, user2=friend_request.to_user)
         friend_request.delete()
-        return Response({"detail": "ACCEPTED"},status=status.HTTP_204_NO_CONTENT)
+        return Response({"detail": "Friend request ACCEPTED"},status=status.HTTP_204_NO_CONTENT)
         # return redirect('list_friend_requests')
         
         try:
