@@ -86,3 +86,4 @@ Import the postman collection named --> 'Postman-collection-for-DRF.postman_coll
 
 
 
+## NOTE : We have few sample users kept in the ORM database for easier evaluation.
