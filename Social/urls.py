@@ -24,4 +24,5 @@ admin.site.index_title = "Welcome to Gururaj Researcher Portal"
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('SocialApp.urls')),
+    path('auth/',include('rest_framework.urls',namespace='rest_framework')),
 ]
