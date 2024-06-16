@@ -30,6 +30,7 @@ from rest_framework.pagination import PageNumberPagination
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.permissions import AllowAny
 from rest_framework.authtoken.models import Token
+from rest_framework.authentication import BasicAuthentication
 # Create your views here.
 
 
@@ -38,6 +39,7 @@ from rest_framework.authtoken.models import Token
 class UserRegistrationView(generics.CreateAPIView):
     serializer_class = UserRegistrationSerializer
     permission_classes = [permissions.AllowAny]
+    authentication_classes = [BasicAuthentication]
     queryset = User.objects.all()
     def create(self, request, *args, **kwargs):
         username = request.data.get('username')
@@ -59,7 +61,7 @@ class UserRegistrationView(generics.CreateAPIView):
 
 class LoginView(generics.GenericAPIView):
     serializer_class = LoginSerializer
-
+    authentication_classes = [BasicAuthentication]
     def post(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
@@ -93,6 +95,7 @@ class LoginView1(APIView):
 class UserListView(generics.ListAPIView):
     serializer_class = UserSerializer
     permission_classes = [IsAuthenticated]
+    authentication_classes = [BasicAuthentication]
     filter_backends = [DjangoFilterBackend, SearchFilter]
     search_fields = ['username', 'email']
     pagination_class = PageNumberPagination
@@ -101,6 +104,7 @@ class UserListView(generics.ListAPIView):
         # Exclude the current user from the queryset
         return User.objects.exclude(id=self.request.user.id)
 class SendFriendRequestView(APIView):
+    authentication_classes = [BasicAuthentication]
     def post(self, request, to_user_id):
         try:
             to_user = User.objects.get(id=to_user_id)
@@ -125,6 +129,7 @@ def can_send_friend_request(from_user):
     return recent_requests_count < 3
 
 class ListFriendRequestsView(generics.ListAPIView):
+    authentication_classes = [BasicAuthentication]
     queryset = FriendRequest.objects.all()
     serializer_class = FriendRequestSerializer
     permission_classes = [IsAuthenticated]
@@ -135,6 +140,7 @@ class ListFriendRequestsView(generics.ListAPIView):
     
 
 class DeclineFriendRequestView(APIView):
+    authentication_classes = [BasicAuthentication]
     permission_classes = [IsAuthenticated]
 
     def post(self, request, request_id):
@@ -144,6 +150,7 @@ class DeclineFriendRequestView(APIView):
        return Response({"detail": "Friend request Deleted"},status=status.HTTP_204_NO_CONTENT)
 
 class AcceptFriendRequestView(APIView):
+    authentication_classes = [BasicAuthentication]
     permission_classes = [IsAuthenticated]
 
     def post(self, request, request_id):
@@ -166,6 +173,7 @@ class AcceptFriendRequestView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class FriendsList(APIView):
+    authentication_classes = [BasicAuthentication]
     permission_classes = [IsAuthenticated]
     
     def get(self, request):
