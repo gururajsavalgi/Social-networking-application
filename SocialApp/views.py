@@ -39,7 +39,6 @@ from rest_framework.authentication import BasicAuthentication
 class UserRegistrationView(generics.CreateAPIView):
     serializer_class = UserRegistrationSerializer
     permission_classes = [permissions.AllowAny]
-    authentication_classes = [BasicAuthentication]
     queryset = User.objects.all()
     def create(self, request, *args, **kwargs):
         username = request.data.get('username')
@@ -61,7 +60,7 @@ class UserRegistrationView(generics.CreateAPIView):
 
 class LoginView(generics.GenericAPIView):
     serializer_class = LoginSerializer
-    authentication_classes = [BasicAuthentication]
+
     def post(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
